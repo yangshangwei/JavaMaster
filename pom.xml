@@ -16,6 +16,7 @@
 		<spring.version>4.3.9.RELEASE</spring.version>
 		<httpclient.version>4.3.6</httpclient.version>
 		<junit.version>3.8.1</junit.version>
+		<commons-lang>2.6</commons-lang>
 	</properties>
 
 	<dependencies>
@@ -45,6 +46,16 @@
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
+		
+		
+		
+		<!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons-lang}</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
