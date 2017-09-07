@@ -1,4 +1,4 @@
-package com.xgj.master.java.io.fileDemo;
+package com.xgj.master.java.io.fileDemo.byteStreams;
 
 import java.io.File;
 import java.io.FileInputStream;
