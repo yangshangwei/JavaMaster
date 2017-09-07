@@ -27,9 +27,8 @@ public class FileCopyNoBufferPreJDK7 { // Pre-JDK 7
 	public void test() {
 		// 利用Spring提供的Resource/ResourceLoader接口操作资源文件
 		ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
-		Resource resource = resourcePatternResolver.getResource("classpath:com/xgj/master/java/io/fileDemo/281015.jpg");
-
-		System.out.println(resource.getFilename());
+		Resource resource = resourcePatternResolver
+				.getResource("classpath:com/xgj/master/java/io/fileDemo/SQL.Cookbook.pdf");
 
 		FileInputStream in = null;
 		FileOutputStream out = null;
@@ -38,10 +37,10 @@ public class FileCopyNoBufferPreJDK7 { // Pre-JDK 7
 		try {
 			// Print file length
 			File fileIn = resource.getFile();
-			System.out.println("File size is " + fileIn.length() + " bytes");
+			System.out.println("File size is " + fileIn.length() / 1024 / 1024 + " MB");
 
 			in = new FileInputStream(fileIn);
-			out = new FileOutputStream(new File("D:\\test.jpg"));
+			out = new FileOutputStream(new File("D:\\NoBufferPreJDK7.pdf"));
 
 			startTime = System.nanoTime();
 
@@ -59,7 +58,7 @@ public class FileCopyNoBufferPreJDK7 { // Pre-JDK 7
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			// JDK 之前的写法，在finally中关闭流
+			// JDK7之前的写法，在finally中关闭流
 			try {
 				if (in != null)
 					in.close();
