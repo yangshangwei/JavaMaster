@@ -75,11 +75,10 @@ public class User implements Externalizable {
 		// implement your own code to write objects of this class
 		out.writeInt(code);
 		out.writeObject(name);
-
 		// write empty password:
 		out.writeObject("");
-
 		out.writeObject(birthday);
+
 	}
 
 	@Override
@@ -89,5 +88,6 @@ public class User implements Externalizable {
 		this.name = (String) in.readObject();
 		this.password = (String) in.readObject();
 		this.birthday = (Date) in.readObject();
+
 	}
 }
